@@ -1,19 +1,25 @@
+const bcrypt = require('bcryptjs');
 const User = require('../Models/User');
+
+const rdhash = Number(process.env.RD_HASH);
 
 module.exports = {
   async CreateUser(req, res) {
-    const {
+    let {
+      // eslint-disable-next-line prefer-const
       _id,
+      // eslint-disable-next-line prefer-const
       nome,
+      // eslint-disable-next-line prefer-const
       email,
       senha,
+      // eslint-disable-next-line prefer-const
       telefones,
+      // eslint-disable-next-line prefer-const
       token,
     } = req.body;
 
-    // let user = new User({
-    //   _id, nome, email, senha, token
-    // });
+    senha = bcrypt.hashSync(senha, rdhash);
 
     const emailExiste = await User.findOne({ email });
     if (!emailExiste) {
@@ -26,9 +32,9 @@ module.exports = {
           telefones,
           token,
         });
-        return res.status(200).send(user);
+        return res.status(201).send(user);
       } catch (error) {
-        res.status(500).send(error);
+        res.status(500).send({ error });
       }
     }
     res.status(400).send({ message: 'Email ja existente' });
@@ -37,9 +43,9 @@ module.exports = {
   async listaUser(req, res) {
     try {
       const users = await User.find({});
-      res.status(200).send(users);
+      res.status(201).send(users);
     } catch (error) {
-      res.status(501).send(error);
+      res.status(500).send({ error });
     }
   },
 };
