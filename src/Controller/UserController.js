@@ -31,7 +31,7 @@ module.exports = {
         res.status(500).send(error);
       }
     }
-    res.status(400).send({ message: 'Email ja existe' });
+    res.status(400).send({ message: 'Email ja existente' });
   },
 
   async listaUser(req, res) {
