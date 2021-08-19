@@ -1,10 +1,10 @@
 const express = require('express');
+const UserController = require('../src/Controller/UserController');
 
 const routes = express.Router();
 
 /* GET home page. */
-routes.get('/', (req, res) => {
-  res.json({ teste: 'oi' });
-});
+routes.post('/', UserController.CreateUser);
+routes.get('/list', UserController.listaUser);
 
 module.exports = routes;

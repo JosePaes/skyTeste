@@ -1,10 +1,10 @@
 const express = require('express');
 
-const routes = express.Router();
+const router = express.Router();
 
 /* GET home page. */
-routes.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.json({ teste: 'oi' });
 });
 
-module.exports = routes;
+module.exports = router;
