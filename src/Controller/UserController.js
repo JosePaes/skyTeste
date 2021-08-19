@@ -1,13 +1,12 @@
 const bcrypt = require('bcryptjs');
 const User = require('../Models/User');
+const { v4: uuidv4 } = require('uuid');
 
 const rdhash = Number(process.env.RD_HASH);
 
 module.exports = {
   async CreateUser(req, res) {
     let {
-      // eslint-disable-next-line prefer-const
-      _id,
       // eslint-disable-next-line prefer-const
       nome,
       // eslint-disable-next-line prefer-const
@@ -18,9 +17,8 @@ module.exports = {
       // eslint-disable-next-line prefer-const
       token,
     } = req.body;
-
+    let _id = uuidv4();
     senha = bcrypt.hashSync(senha, rdhash);
-
     const emailExiste = await User.findOne({ email });
     if (!emailExiste) {
       try {
