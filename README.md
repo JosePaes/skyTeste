@@ -37,7 +37,7 @@
 
 #### Criação de usuário
 
->POST EM https://skyteste.herokuapp.com//users
+>POST EM https://skyteste.herokuapp.com/users/create
 
 Exemplo:
 
@@ -61,7 +61,7 @@ Exemplo:
 
 #### Sign In
 
->POST EM https://skyteste.herokuapp.com//users/sign
+>POST EM https://skyteste.herokuapp.com/users/sign
 
 Exemplo:
 
@@ -76,7 +76,7 @@ Após o login a API retornará um json com a representação do usuário contend
 
 #### Listagem de usuários
 
->GET EM https://skyteste.herokuapp.com//users/list/{ _id }
+>GET EM https://skyteste.herokuapp.com/users/list/{ _id }
 
 * O acesso dessa rota é permitido apenas pra quem realizou login e possui um token válido.
 * Usuários deverão ter feito login a menos de 30 minutos para acessar essa rota.
