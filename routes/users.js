@@ -6,7 +6,7 @@ const Autenticate = require('../src/middlewares/authenticate');
 const routes = express.Router();
 
 /* GET home page. */
-routes.post('/', UserController.CreateUser);
+routes.post('/create', UserController.CreateUser);
 routes.get('/list/:_id', Autenticate, UserController.listaUser);
 
 routes.post('/sign', AuthController.login);
