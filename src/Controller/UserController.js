@@ -48,7 +48,7 @@ module.exports = {
 
   async listaUser(req, res) {
     try {
-      const users = await User.find();
+      const users = await User.findOne();
       res.status(201).send(users);
     } catch (error) {
       res.status(500).send({ error });
