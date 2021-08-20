@@ -80,5 +80,5 @@ Após o login a API retornará um json com a representação do usuário contend
 
 * O acesso dessa rota é permitido apenas pra quem realizou login e possui um token válido.
 * Usuários deverão ter feito login a menos de 30 minutos para acessar essa rota.
-* O _id do usuário deverá ser fornecido na rota /users/list_id.
+* O _id do usuário deverá ser fornecido na rota /users/list/_id.
 * O token deve ser passado no header da requisição com o nome "authorization".
