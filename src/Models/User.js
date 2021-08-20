@@ -57,12 +57,12 @@ UserSchema.pre('save', (next) => {
   next();
 });
 
-// UserSchema.pre('update', () => {
-//   this.constructor.update({ _id: this._id }, { $set: { updatedAt: Date.now() } });
-// });
+UserSchema.pre('update', () => {
+  this.constructor.update({ _id: this._id }, { $set: { updatedAt: Date.now() } });
+});
 
-// UserSchema.pre('findOneAndUpdate', () => {
-//   this.constructor.update({ _id: this._id }, { $set: { updatedAt: Date.now() } });
-// });
+UserSchema.pre('findOneAndUpdate', () => {
+  this.constructor.update({ _id: this._id }, { $set: { updatedAt: Date.now() } });
+});
 
 module.exports = mongoose.model('User', UserSchema);
