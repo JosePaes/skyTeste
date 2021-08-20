@@ -3,17 +3,20 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "node ./bin/www"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
     "express": "~4.16.1",
     "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
     "mongodb": "^4.1.0",
     "mongoose": "^5.13.7",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
