@@ -10,12 +10,12 @@ module.exports = async (req, res, next) => {
     return tempoDecorrido.asMinutes();
   }
 
-  // const { _id } = req.params;
-  // if (!_id) {
-  //   res.status(401).send({ message: 'Por favor, informe o id do usuário.' });
-  // }
+  const { _id } = req.params;
+  if (!_id) {
+    res.status(401).send({ message: 'Por favor, informe o id do usuário.' });
+  }
 
-  // const user = await User.findOne({ _id });
+  const user = await User.findOne();
 
   const token = req.headers['authorization'];
 
