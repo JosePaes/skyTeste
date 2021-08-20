@@ -8,14 +8,14 @@ module.exports = async (req, res, next) => {
     const ultimoLogin = moment(user.ultimo_login);
     const tempoDecorrido = moment.duration(agora.diff(ultimoLogin));
     return tempoDecorrido.asMinutes();
-}
-
-  const { _id } = req.params;
-  if (!_id) {
-    res.status(401).send({ message: 'Por favor, informe o id do usuário.' });
   }
 
-  const user = await User.findOne({ _id });
+  // const { _id } = req.params;
+  // if (!_id) {
+  //   res.status(401).send({ message: 'Por favor, informe o id do usuário.' });
+  // }
+
+  // const user = await User.findOne({ _id });
 
   const token = req.headers['authorization'];
 
