@@ -8,7 +8,7 @@ module.exports = async (req, res, next) => {
     const ultimoLogin = moment(user.ultimo_login);
     const tempoDecorrido = moment.duration(agora.diff(ultimoLogin));
     return tempoDecorrido.asMinutes();
-  }
+}
 
   const { _id } = req.params;
   if (!_id) {
