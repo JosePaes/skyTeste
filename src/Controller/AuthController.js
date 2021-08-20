@@ -23,7 +23,7 @@ module.exports = {
       user.token = token;
       res.set('authorization', token);
       await user.save();
-      return res.status(200).send('Login realizado com Sucesso');
+      return res.status(200).json(user);
     } catch (error) {
       return res.status(500).send({ message: 'Erro desconhecido' });
     }
